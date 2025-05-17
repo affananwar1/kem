@@ -16,157 +16,82 @@
     <link rel="icon" href="logo.png" type="image/png">
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;
         }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background: #000000;
-            color: #ffffff;
-        }
+        html { scroll-behavior: smooth; }
+        body { background: #000; color: #fff; }
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #000;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            flex-wrap: wrap;
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: #000; padding: 15px 20px;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; flex-wrap: wrap;
         }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        .logo img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
-        header nav {
-            display: flex;
-            flex-wrap: wrap;
-        }
+        .logo { display: flex; align-items: center; }
+        .logo img { width: 50px; height: 50px; margin-right: 10px; }
+        header nav { display: flex; flex-wrap: wrap; }
         header nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
+            color: #fff; text-decoration: none; margin: 0 10px; font-weight: bold;
             transition: color 0.3s;
         }
-        header nav a:hover {
-            color: #ff6347;
-        }
+        header nav a:hover { color: #ff6347; }
         section {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
+            min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            opacity: 0; transform: translateY(30px);
             transition: opacity 1s ease, transform 1s ease;
             padding: 20px;
         }
-        .show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .hide {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
+        .show { opacity: 1; transform: translateY(0); }
+        .hide { opacity: 0; transform: translateY(30px); }
         .portfolio {
-            overflow-x: auto;
-            white-space: nowrap;
-            width: 90%;
-            display: flex;
-            gap: 15px;
-            padding: 20px 0;
+            overflow-x: auto; white-space: nowrap; width: 90%;
+            display: flex; gap: 15px; padding: 20px 0;
         }
         .portfolio img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            object-fit: cover;
-            border-radius: 10px;
+            width: 100%; max-width: 300px; height: auto;
+            object-fit: cover; border-radius: 10px;
             transition: transform 0.3s;
         }
-        .portfolio img:hover {
-            transform: scale(1.1);
-        }
+        .portfolio img:hover { transform: scale(1.1); }
         .static-bg {
-            background-image: url('logo.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 600px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 2em;
+            background-image: url('logo.png'); background-size: cover;
+            background-position: center; background-attachment: fixed;
+            min-height: 600px; width: 100%;
+            display: flex; justify-content: center; align-items: center;
+            color: #fff; font-size: 2em;
         }
         footer {
-            background: #000;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            width: 100%;
+            background: #000; color: #fff; text-align: center;
+            padding: 20px; width: 100%;
         }
         .contact input, .contact textarea {
-            width: 100%;
-            max-width: 500px;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
+            width: 100%; max-width: 500px; padding: 10px;
+            margin: 10px 0; border: none; border-radius: 5px;
             font-size: 16px;
         }
         .contact button {
-            background: #ff6347;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
+            background: #ff6347; color: #fff; padding: 10px 20px;
+            border: none; font-size: 16px; cursor: pointer;
             transition: background 0.3s;
         }
-        .contact button:hover {
-            background: #e55337;
-        }
+        #about .team-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 20px; }
+        .team-member { background: #111; padding: 20px; border-radius: 10px; max-width: 300px; text-align: center; }
+        .team-member img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; }
+        .team-member h3 { margin-bottom: 10px; }
+        .team-member p { font-size: 14px; line-height: 1.5; }
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            header nav {
-                margin-top: 10px;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .portfolio {
-                display: block;
-                text-align: center;
-            }
-            .portfolio img {
-                display: block;
-                margin: 10px auto;
-            }
+            header { flex-direction: column; text-align: center; }
+            header nav { margin-top: 10px; justify-content: center; }
+            .portfolio { display: block; text-align: center; }
+            .portfolio img { display: block; margin: 10px auto; }
+            #about .team-container { flex-direction: column; align-items: center; }
+        }
+        .contact button:hover { background: #e55337; }
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            header nav { margin-top: 10px; justify-content: center; }
+            .portfolio { display: block; text-align: center; }
+            .portfolio img { display: block; margin: 10px auto; }
         }
     </style>
 </head>
@@ -178,10 +103,10 @@
         </div>
         <nav>
             <a href="#intro">Introduction</a>
-            <a href="#portfolio">Our Portfolio</a>
-            <a href="#vision">Our Vision</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#vision">Vision</a>
             <a href="#about">Meet Us</a>
-            <a href="#contact">Contact Us</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -190,13 +115,36 @@
         <p>We specialize in organizing weddings, corporate events, concerts, and private parties. Let us turn your dream event into reality!</p>
     </section>
 
+    <!-- PROFESSIONAL SHOOTS -->
     <section id="portfolio" class="fade-in">
-        <h1>Our Portfolio</h1>
+        <h1>Professional Shoots</h1>
         <div class="portfolio">
-            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wedding Event">
-            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corporate Event">
-            <img src="https://plus.unsplash.com/premium_photo-1670430623154-24626c42fb33?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Concert">
-            <img src="https://plus.unsplash.com/premium_photo-1663076211121-36754a46de8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Birthday Party">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2070" alt="Wedding Event">
+            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=2070" alt="Corporate Event">
+            <img src="https://images.unsplash.com/photo-1670430623154-24626c42fb33?q=80&w=2070" alt="Concert">
+            <img src="https://images.unsplash.com/photo-1663076211121-36754a46de8d?q=80&w=2070" alt="Birthday Party">
+        </div>
+    </section>
+
+    <!-- CORPORATE HIGHLIGHTS -->
+    <section id="corporate" class="fade-in">
+        <h1>Corporate Highlights</h1>
+        <div class="portfolio">
+            <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2070" alt="Team Building">
+            <img src="https://images.unsplash.com/photo-1581091870635-82f389407b95?q=80&w=2070" alt="Conference">
+            <img src="https://images.unsplash.com/photo-1601597114845-82688d33eefd?q=80&w=2070" alt="Product Launch">
+            <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?q=80&w=2070" alt="Networking Event">
+        </div>
+    </section>
+
+    <!-- FREE PICKS -->
+    <section id="freepicks" class="fade-in">
+        <h1>Free Picks</h1>
+        <div class="portfolio">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2070" alt="Casual Meet">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070" alt="Outdoor Party">
+            <img src="https://images.unsplash.com/photo-1515165562835-c5cf23f46f25?q=80&w=2070" alt="Intimate Gathering">
+            <img src="https://images.unsplash.com/photo-1526481280690-3cfbf99b8adf?q=80&w=2070" alt="Night Gala">
         </div>
     </section>
 
@@ -209,8 +157,19 @@
 
     <section id="about" class="fade-in">
         <h1>Meet Us</h1>
-        <p>Dr. Asifa and Mian Khurshid</p>   
-     </section>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300" alt="Dr. Asifa">
+                <h3>Dr. Asifa</h3>
+                <p>Founder & Lead Coordinator. Dr. Asifa holds a Ph.D. in Event Management and brings over 12 years of experience crafting high-profile weddings and celebrations across South Asia. Her keen attention to detail ensures every event flows seamlessly.</p>
+            </div>
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1502764613149-7f1d229e230f?q=80&w=300" alt="Mian Khursheed">
+                <h3>Mian Khursheed</h3>
+                <p>Head of Logistics. With a background in hospitality management, Mian Khursheed has overseen logistics for hundreds of corporate and private events. His strategic planning and vendor relationships keep every function on time and on budget.</p>
+            </div>
+        </div>
+    </section>
 
     <section id="contact" class="fade-in contact">
         <h1>Contact Us</h1>
@@ -225,17 +184,17 @@
     </footer>
 
     <script>
-        document.addEventListener("scroll", function() {
+        document.addEventListener("scroll", () => {
             let sections = document.querySelectorAll(".fade-in");
-            let scrollPosition = window.innerHeight * 0.8;
-            sections.forEach(section => {
-                let rect = section.getBoundingClientRect();
-                if (rect.top < scrollPosition) {
-                    section.classList.add("show");
-                    section.classList.remove("hide");
-                } else if (rect.bottom > window.innerHeight) {
-                    section.classList.add("hide");
-                    section.classList.remove("show");
+            let trigger = window.innerHeight * 0.8;
+            sections.forEach(sec => {
+                const top = sec.getBoundingClientRect().top;
+                if (top < trigger) {
+                    sec.classList.add("show");
+                    sec.classList.remove("hide");
+                } else {
+                    sec.classList.add("hide");
+                    sec.classList.remove("show");
                 }
             });
         });
